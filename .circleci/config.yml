@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@5.0.1
-aws-cli: circleci/aws-cli@2.1.0
+  aws-cli: circleci/aws-cli@2.1.0
 jobs:
   build:
     docker:
@@ -26,6 +26,11 @@ jobs:
           name: Back-End Build
           command: |
             npm run backend:build
+  deploy:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - node/install
       - run:
           name: Deploy App
           command: |
@@ -34,4 +39,9 @@ jobs:
           name: Deploy Server
           command: |
             npm run backend:deploy
+workflows:
+  udagram:
+    jobs:
+      - build
+      - deploy
 
