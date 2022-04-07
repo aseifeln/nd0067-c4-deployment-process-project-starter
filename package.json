@@ -9,6 +9,7 @@
         "start:all": "concurrently \"npm run start:server\" \"npm run start:frontend\"",
         "frontend:unit-test": "cd client && npm run test",
         "frontend:e2e-test": "cd client && npm run e2e",
+        "backend:test": "cd server && npm run test",
         "frontend:deploy": "cd client && npm run deploy",
         "backend:deploy": "cd server && npm run deploy"
     },
