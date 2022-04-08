@@ -38,6 +38,9 @@ jobs:
           name: Deploy Front-End App
           command: |
             npm run frontend:deploy
+          name: Deploy Back-End
+          command: |
+            npm run backend:deploy
 workflows:
   udagram:
     jobs:
